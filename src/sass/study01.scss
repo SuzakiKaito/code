@@ -1,0 +1,28 @@
+.content {
+  text-align: center;
+  display: block;
+  margin: 300px auto;
+  top: 30%;
+  position: relative;
+  
+  button {
+    color: white;
+    background: #9cce20;
+    box-shadow: none !important;
+    border: 2px solid #9cce20;
+    min-width: 6%;
+    padding: 5px;
+    border-radius: 50px;
+    font-family: MONOSPACE;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .timer,p {
+    font-size: 45px;
+    text-transform: uppercase;
+    color: #9cce20;
+  }
+}
+body{
+  font-family: MONOSPACE;
+}
