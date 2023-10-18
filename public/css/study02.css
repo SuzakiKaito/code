@@ -1,0 +1,111 @@
+.content {
+  width: 500px;
+  height: 400px;
+  overflow: scroll;
+  border-radius: 20px;
+  border: 5px solid rgb(72, 119, 2);
+  margin: 30px auto;
+  background: #eaeaea;
+}
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-size: 20px;
+  height: 100vh;
+  background: linear-gradient(45deg, lightgreen, rgb(102, 255, 143), rgb(249, 249, 158), rgb(255, 255, 142));
+  animation: ease-in-out move-gradation 5s inherit;
+}
+
+@keyframes move-gradation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+h1 {
+  color: rgb(104, 165, 104);
+  text-align: center;
+  margin-top: 100px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  border: 2px solid rgb(104, 165, 104);
+  padding: 10px 0px 10px 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.box .todo-btn {
+  color: #fff;
+  background-color: rgb(104, 165, 104);
+  width: 29%;
+  margin-left: 0.5%;
+}
+.box input {
+  width: 69%;
+}
+.box button, .box input {
+  padding: 10px 15px;
+  border: 2px solid rgb(104, 165, 104);
+}
+
+.open {
+  display: block;
+  margin-top: 15px;
+  max-width: 500px;
+  border: 5px solid rgb(104, 165, 104);
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.todo {
+  position: relative;
+}
+
+.remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 5px 15px;
+  color: #fff;
+  background: rgb(104, 165, 104);
+  margin: 0;
+}
+
+.disabled {
+  opacity: 0.33;
+}
