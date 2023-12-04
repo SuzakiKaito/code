@@ -39,7 +39,7 @@ window.onload = function () {
       console.log("sec");
       sec++;
       elemSec.innerHTML = "0" + sec;
-        sec = 0;
+        msec = 0;
         elemMsec.innerHTML = "0" + 0;
     }
     if(sec > 9){

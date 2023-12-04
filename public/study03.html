@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <link rel="stylesheet" href="./css/ress.css">
+  <link rel="stylesheet" href="./css/study03.css">
+</head>
+<body>
+  <header>
+		<h1>JavaScriptで電卓</h1>
+	</header>
+	<div id="calculator">
+        <input type="text" id="display" disabled>
+        <br>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator">/</button>
+        <br>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator">*</button>
+        <br>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator">-</button>
+        <br>
+        <button class="double">0</button>
+        <button>.</button>
+        <button class="operator">+</button>
+        <button class="operator double">=</button>
+        <br>
+        <button class="clear" onclick="clearDisplay()">C</button>
+    </div>
+
+    <script>
+        // JavaScriptコード
+        document.addEventListener('DOMContentLoaded', function () {
+            const display = document.getElementById('display');
+            let currentInput = '';
+
+            function updateDisplay() {
+                display.value = currentInput;
+            }
+
+            function clearDisplay() {
+                currentInput = '';
+                updateDisplay();
+            }
+
+            function appendToInput(value) {
+                currentInput += value;
+                updateDisplay();
+            }
+
+            function calculateResult() {
+                try {
+                    currentInput = eval(currentInput).toString();
+                    updateDisplay();
+                } catch (error) {
+                    currentInput = 'Error';
+                    updateDisplay();
+                }
+            }
+
+            // ボタンがクリックされたときの処理
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function () {
+                    const buttonText = this.innerText;
+
+                    if (buttonText === '=') {
+                        calculateResult();
+                    } else {
+                        appendToInput(buttonText);
+                    }
+                });
+            });
+        });
+    </script>
+
+	
+  <script src="./js/study03.js"></script>
+</body>
+</html>
